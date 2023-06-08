@@ -1,9 +1,9 @@
-const { DataTypes } = require('sequelize');
+const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
-  const Country = sequelize.define('Country', {
+  const Country = sequelize.define("Country", {
     id: {
-      type: DataTypes.STRING(3), // Código de tres letras
+      type: DataTypes.STRING(3),
       primaryKey: true,
       allowNull: false,
     },
@@ -31,7 +31,7 @@ module.exports = (sequelize) => {
 
   Country.associate = (models) => {
     Country.belongsToMany(models.Activity, {
-      through: 'CountryActivity',
+      through: "CountryActivity",
     });
   };
 
